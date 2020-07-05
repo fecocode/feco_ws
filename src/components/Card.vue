@@ -11,11 +11,10 @@
       <b-button
         :icon-right="expand ? 'open-in-new' : 'arrow-down'"
         class="card-button"
-        type="is-dark"
+        :type="expand ? 'is-dark' : 'is-text'"
         size="is-small"
         tag="button"
         rounded
-        :outlined="!expand"
         @click.stop="expand ? goTo(url): expand=true"
         >
       </b-button>
