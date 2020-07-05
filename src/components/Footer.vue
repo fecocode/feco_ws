@@ -2,7 +2,8 @@
     <div>
         <hr>
         <div class="main-footer">
-            Sitio construido con <img class="vueico" src="https://images.opencollective.com/vuejs/25a8146/logo/256.png"/>
+            Sitio construido con 
+            <img class="vueico" src="https://images.opencollective.com/vuejs/25a8146/logo/256.png"/>
             www.fecocode.com
         </div>
     </div>
