@@ -27,6 +27,14 @@ export default {
           tags: ['#html','#javascript','#vue.js','#css','#babel'],
           star: true,
         },
+        {
+          title: "meli-frontend-challenge",
+          text: "Desafío front-end de Mercado Libre. Consiste en construir un cuadro de búsqueda y la visualización de sus resultados.",
+          url: "https://github.com/fecocode/meli-frontend-challenge",
+          redirectionInfo: 'github.com',
+          tags: ['#node.js','#express','#javascript','#react','#webpack','#babel','#sass'],
+          star: true,
+        },
       ]
     }
   }
