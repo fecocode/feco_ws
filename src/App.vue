@@ -12,6 +12,7 @@
       </p>
       <PostsList class="posts"></PostsList>
       <ProjectsList class="posts"></ProjectsList>
+      <Footer></Footer>
     </div>
   </div>
 </template>
@@ -20,6 +21,7 @@
 import Logo from "./components/Logo"
 import PostsList from "./components/PostsList"
 import ProjectsList from "./components/ProjectsList"
+import Footer from "./components/Footer"
 
 export default {
   name: 'app',
@@ -27,6 +29,7 @@ export default {
     Logo,
     PostsList,
     ProjectsList,
+    Footer
   }
 }
 </script>
