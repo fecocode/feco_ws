@@ -29,11 +29,11 @@
       </div>
     </div>
     <transition name="fade">
-      <div class="empty-search" v-if="itemsToShow.length === 0">
+      <div class="empty-search" v-if="paginatedItems.length === 0">
         <span>🤔 No se encontraron {{cleanTitle}}</span>
       </div>
     </transition>
-    <Card v-for="(item,index) in itemsToShow" :key="`${title}-${index}`"
+    <Card v-for="(item,index) in paginatedItems" :key="`${title}-${index}`"
       :title="item.title"
       :text="item.text"
       :url="item.url"
@@ -127,6 +127,9 @@ export default {
         return !includes;
       })
 
+    },
+    paginatedItems(){
+      return this.itemsToShow.slice(0,4)
     }
   }
 }
