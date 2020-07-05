@@ -47,6 +47,26 @@
             rounded
             >
             </b-button>
+            <b-button
+            icon-right="github"
+            type="is-text"
+            size="is-large"
+            tag="a"
+            target="_blank"
+            href="https://github.com/fecocode/"
+            rounded
+            >
+            </b-button>
+            <b-button
+            icon-right="email"
+            type="is-text"
+            size="is-large"
+            tag="a"
+            target="_blank"
+            href="mailto:hola@fecocode.com"
+            rounded
+            >
+            </b-button>
         </div>
     </div>
 </template>
@@ -60,7 +80,7 @@ export default {
                 name: 'Franco',
                 lastName: 'Colares',
                 age: this.calcAge(),
-                location: 'Córdoba AR',
+                location: 'Córdoba, AR',
                 hair: 'null',
             },
             key: '',

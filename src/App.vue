@@ -10,8 +10,8 @@
         🔬 Amante de la ciencia <br>
         😄 Pelado
       </p>
-      <hr>
       <PostsList class="posts"></PostsList>
+      <ProjectsList class="posts"></ProjectsList>
     </div>
   </div>
 </template>
@@ -19,12 +19,14 @@
 <script>
 import Logo from "./components/Logo"
 import PostsList from "./components/PostsList"
+import ProjectsList from "./components/ProjectsList"
 
 export default {
   name: 'app',
   components:{
     Logo,
     PostsList,
+    ProjectsList,
   }
 }
 </script>
