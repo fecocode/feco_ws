@@ -1,0 +1,117 @@
+<template>
+  <div class="downloader">
+    <div class="downloader-container">
+      <div class="downloader__avatar">
+      </div>
+      <h1>
+        {{`¡Hola ${documentData.receiver}!`}}
+      </h1>
+      <p>
+        Te comparto el siguiente documento:<br><br>
+        <span>Nombre:</span> {{documentData.name}}<br>
+        <span>Creación:</span> {{documentData.created}}<br>
+      </p>
+      <a class="download__button" :href="documentData.path" download>
+        Descargar
+      </a>
+    </div>
+  </div>
+</template>
+
+<script>
+import { searchDocument } from './utils/downloads'
+
+export default {
+  name: 'Downloads',
+  computed: {
+    documentData(){
+      const id = this.$route.params.id;
+      return searchDocument(id);
+    }
+  },
+  methods: {
+    download(path){
+      window.browser.downloads.download({
+        url: path,
+        filename: 'prueba1.pdf'
+      })
+    }
+  }
+}
+</script>
+
+<style scoped>
+
+  .downloader{
+    height: 100vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background: #f1f1f1;
+  }
+  .downloader-container{
+    margin: auto;
+    height: 93vh;
+    width: 40%;
+    border-radius: 57px;
+    background: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: center;
+    padding: 50px 0px;
+    box-shadow:  5px 5px 10px #cdcdcd,
+                -5px -5px 10px #ffffff;
+
+  }
+  .downloader__avatar{
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+    margin: auto;
+    background-image: url('./assets/vectors/main.svg');
+    background-size: 230%;
+    background-position-y: -85px;
+    background-position-x: -65px;
+    box-shadow:  5px 5px 10px #cdcdcd,
+                -5px -5px 10px #ffffff;
+  }
+
+  .download__button{
+    cursor: pointer;
+    width: fit-content;
+    background: #0c3f6a;
+    color: #fff;
+    padding: 20px 50px;
+    margin: auto;
+    border-radius: 20px;
+    transition: .5s;
+    box-shadow:  5px 5px 10px #cdcdcd,
+                -5px -5px 10px #ffffff;
+  }
+  .download__button:hover{
+    transform: scale(1.03);
+    box-shadow:  15px 15px 30px #cdcdcd,
+                -15px -15px 30px #ffffff;
+  }
+  h1{
+    margin: auto;
+    font-size: 35px;
+    color: #0c3f6a;
+  }
+  p{
+    margin: auto;
+    color: #555;
+    text-align: center;
+  }
+  span{
+    color: #036a93
+  }
+
+  @media only screen and (orientation: portrait){
+    .downloader-container{
+      width: 90%
+    }
+  }
+
+</style>
