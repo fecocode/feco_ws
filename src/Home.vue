@@ -34,11 +34,6 @@ export default {
     //GoalsList,
     Footer
   },
-  mounted(){
-    if(this.$route.params.id){
-      this.$router.push(this.$route.params.id);
-    }
-  }
 }
 </script>
 

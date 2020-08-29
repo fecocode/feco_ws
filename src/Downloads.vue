@@ -29,14 +29,6 @@ export default {
       return searchDocument(id);
     }
   },
-  methods: {
-    download(path){
-      window.browser.downloads.download({
-        url: path,
-        filename: 'prueba1.pdf'
-      })
-    }
-  }
 }
 </script>
 
