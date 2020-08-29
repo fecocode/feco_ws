@@ -10,8 +10,9 @@
         🔬 Amante de la ciencia <br>
         😄 Pelado
       </p>
-      <PostsList class="posts"></PostsList>
-      <ProjectsList class="posts"></ProjectsList>
+      <PostsList class="main-list"></PostsList>
+      <ProjectsList class="main-list"></ProjectsList>
+      <!--<GoalsList class="main-list"></GoalsList>-->
       <Footer></Footer>
     </div>
   </div>
@@ -21,6 +22,7 @@
 import Logo from "./components/Logo"
 import PostsList from "./components/PostsList"
 import ProjectsList from "./components/ProjectsList"
+//import GoalsList from "./components/GoalsList"
 import Footer from "./components/Footer"
 
 export default {
@@ -29,6 +31,7 @@ export default {
     Logo,
     PostsList,
     ProjectsList,
+    //GoalsList,
     Footer
   }
 }
@@ -94,7 +97,7 @@ hr{
   margin-left: 1em;
 }
 
-.posts{
+.main-list{
   margin-top: 1em;
 }
 
