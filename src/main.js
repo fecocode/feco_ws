@@ -20,6 +20,10 @@ const router = new VueRouter({
       component: Home,
     },
     {
+      path: '/:id',
+      component: Home,
+    },
+    {
       path: '/download/:id',
       component: Downloads
     }
