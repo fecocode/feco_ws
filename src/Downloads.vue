@@ -4,15 +4,15 @@
       <div class="downloader__avatar">
       </div>
       <h1>
-        {{`¡Hola ${documentData.receiver}!`}}
+        {{documentData.welcome}}
       </h1>
       <p>
-        Te comparto el siguiente documento:<br><br>
-        <span>Nombre:</span> {{documentData.name}}<br>
-        <span>Creación:</span> {{documentData.created}}<br>
+        {{documentData.sharedText}}<br><br>
+        <small v-if="documentData.name"><span>Nombre:</span> {{documentData.name}}<br></small>
+        <small v-if="documentData.created"><span>Creación:</span> {{documentData.created}}<br></small>
       </p>
-      <a class="download__button" :href="documentData.path" download>
-        Descargar
+      <a class="download__button" :href="documentData.button.link" :download="documentData.exist">
+        {{documentData.button.text}}
       </a>
     </div>
   </div>
@@ -26,7 +26,30 @@ export default {
   computed: {
     documentData(){
       const id = this.$route.params.id;
-      return searchDocument(id);
+      const data = searchDocument(id);
+      if(data !== undefined){
+        return {
+          exist: true,
+          welcome: `¡Hola ${data.receiver}!`,
+          sharedText: 'Te comparto el siguiente documento',
+          name: data.name,
+          created: data.created,
+          button: {
+            text:'Descargar',
+            link: data.path,
+          },
+        }
+      }
+
+      return {
+        exist: false,
+        welcome: `¡404!`,
+        sharedText: 'No se encontró el documento especificado',
+        button: {
+          text:'Visitar sitio',
+          link: '/',
+        }
+      }
     }
   },
 }
